@@ -19,14 +19,14 @@ The jury checked both parts automatically. A successful defense had to stop the 
 
 ## Challenges
 
-| Round | Challenge | Stack | Main idea |
-| --- | --- | --- | --- |
-| 1 | [Memo Drop](tasks/round-1/memo-drop/) | Python / Flask | Capability-based authorization |
-| 1 | [Telemetry Vault](tasks/round-1/telemetry-vault/) | C++20 | Integer conversions in access checks |
-| 2 | [Double Vision](tasks/round-2/double-vision/) | Python / FastAPI | Path validation and URL decoding |
-| 2 | [Receipt Printer](tasks/round-2/receipt-printer/) | C++20 | Unsafe string formatting |
-| 3 | [Null Authority](tasks/round-3/null-authority/) | Python / FastAPI | JWT signature validation |
-| 3 | [Open Gallery](tasks/round-3/open-gallery/) | Python / Flask | Object-level authorization |
+| Round | Challenge | Stack | Main idea | Writeup |
+| --- | --- | --- | --- | --- |
+| 1 | [Memo Drop](tasks/round-1/memo-drop/) | Python / Flask | Capability-based authorization | [Read](writeups/round-1/memo-drop.md) |
+| 1 | [Telemetry Vault](tasks/round-1/telemetry-vault/) | C++20 | Integer conversions in access checks | [Read](writeups/round-1/telemetry-vault.md) |
+| 2 | [Double Vision](tasks/round-2/double-vision/) | Python / FastAPI | Path validation and URL decoding | [Read](writeups/round-2/double-vision.md) |
+| 2 | [Receipt Printer](tasks/round-2/receipt-printer/) | C++20 | Unsafe string formatting | [Read](writeups/round-2/receipt-printer.md) |
+| 3 | [Null Authority](tasks/round-3/null-authority/) | Python / FastAPI | JWT signature validation | [Read](writeups/round-3/null-authority.md) |
+| 3 | [Open Gallery](tasks/round-3/open-gallery/) | Python / Flask | Object-level authorization | [Read](writeups/round-3/open-gallery.md) |
 
 The complete challenge index is available in [`tasks/README.md`](tasks/README.md).
 
@@ -45,9 +45,17 @@ tasks/
         │   └── exploit.py       # canonical jury exploit
         ├── docker-compose.yml   # isolated local deployment
         └── README.md            # challenge-specific instructions
+writeups/                        # official solutions and defensive patches
+├── round-1/
+├── round-2/
+└── round-3/
 ```
 
 During the event, the `jury/` directories were private. They are included here so the complete check flow can be reproduced after the CTF.
+
+## Official writeups
+
+Detailed solutions are available in [`writeups/`](writeups/README.md). Each writeup explains the vulnerable code, manual reproduction, canonical jury exploit, correct defensive patch and the functionality that the patch must preserve.
 
 ## Running a challenge locally
 
