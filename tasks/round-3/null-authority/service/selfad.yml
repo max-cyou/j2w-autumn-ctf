@@ -1,0 +1,4 @@
+version: 1
+service:
+  port: 8000
+  healthcheck: /health
