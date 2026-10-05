@@ -41,7 +41,7 @@ tasks/
         ├── service/             # vulnerable source given to participants
         ├── jury/
         │   ├── checker.py       # legitimate functionality check
-        │   ├── inject.py        # inserts a random flag
+        │   ├── inject.py        # inserts ten random flags
         │   └── exploit.py       # canonical jury exploit
         ├── docker-compose.yml   # isolated local deployment
         └── README.md            # challenge-specific instructions
@@ -49,6 +49,7 @@ writeups/                        # official solutions and defensive patches
 ├── round-1/
 ├── round-2/
 └── round-3/
+deployment/                      # generic post-event Compose example
 ```
 
 During the event, the `jury/` directories were private. They are included here so the complete check flow can be reproduced after the CTF.
@@ -72,14 +73,14 @@ Run the legitimate functionality check:
 python3 jury/checker.py http://127.0.0.1:8000
 ```
 
-Inject a random flag, then run the canonical exploit:
+Inject ten random flags, then run the canonical exploit:
 
 ```bash
 python3 jury/inject.py http://127.0.0.1:8000
 python3 jury/exploit.py http://127.0.0.1:8000
 ```
 
-The injector and exploit should print the same 32-character flag. Flags use the format:
+The injector and exploit should print the same ten 32-character flags. Flags use the format:
 
 ```text
 [A-Z0-9]{32}
@@ -92,6 +93,8 @@ docker compose down --volumes
 ```
 
 Run one challenge at a time: all compose files publish their service on `127.0.0.1:8000`.
+
+To start a complete round or all six services on separate local ports, see the generic post-event example in [`deployment/`](deployment/README.md). It intentionally excludes the original platform, runner, scoring and production secrets.
 
 ## Safety
 

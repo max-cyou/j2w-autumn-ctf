@@ -25,7 +25,7 @@ GET /api/files/<id>
 Authorization: Bearer <token>
 ```
 
-The jury registers its own account and uploads the flag as a private file.
+The jury registers its own account and uploads ten flags as separate private files.
 
 ## Vulnerable code
 
@@ -87,7 +87,7 @@ The response includes `content` even though the token does not belong to the fil
 
 ## Canonical exploit
 
-The exploit registers a new user, obtains a valid token, lists `/api/gallery`, downloads every published ID with that token, and prints contents matching the flag format. No token forgery, SQL injection or race condition is required.
+The exploit registers a new user, obtains a valid token, lists `/api/gallery`, downloads every published ID with that token, and prints all contents matching the flag format. No token forgery, SQL injection or race condition is required.
 
 ## Correct patch
 

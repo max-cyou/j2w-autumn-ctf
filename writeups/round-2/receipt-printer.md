@@ -16,7 +16,7 @@
 GET /api/receipt?id=<coupon id>&label=<customer label>
 ```
 
-The response should contain the supplied label while keeping the coupon secret private. The jury creates a coupon whose secret is the flag.
+The response should contain the supplied label while keeping the coupon secret private. The jury creates ten coupons whose secrets are flags.
 
 ## Vulnerable code
 
@@ -58,7 +58,7 @@ The `receipt` field contains the coupon secret. There is no need for `%p`, `%n`,
 
 ## Canonical exploit
 
-[`jury/exploit.py`](../../tasks/round-2/receipt-printer/jury/exploit.py) lists coupon IDs, renders each receipt with `label=%s`, and prints `receipt` values matching the flag format. `urllib.parse.urlencode` handles the percent encoding.
+[`jury/exploit.py`](../../tasks/round-2/receipt-printer/jury/exploit.py) lists coupon IDs, renders each receipt with `label=%s`, and prints all `receipt` values matching the flag format. `urllib.parse.urlencode` handles the percent encoding.
 
 ## Correct patch
 

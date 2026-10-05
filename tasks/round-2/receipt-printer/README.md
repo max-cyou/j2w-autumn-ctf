@@ -6,7 +6,7 @@ Round 2 challenge written in C++20. The service renders customer labels for coup
 
 - `service/` — vulnerable receipt service;
 - `jury/checker.py` — verifies ordinary receipt rendering;
-- `jury/inject.py` — creates a coupon whose secret is a random flag;
+- `jury/inject.py` — creates ten coupons whose secrets are random flags;
 - `jury/exploit.py` — canonical exploit used by the jury.
 
 ## Run locally
@@ -18,7 +18,7 @@ python3 jury/inject.py http://127.0.0.1:8000
 python3 jury/exploit.py http://127.0.0.1:8000
 ```
 
-The injector and exploit should print the same flag.
+The injector and exploit should print the same ten flags.
 
 Stop the service:
 

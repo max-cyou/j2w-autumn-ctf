@@ -87,7 +87,7 @@ An ordinary `../` does not work because the first validation sees it and returns
 
 ## Canonical exploit
 
-The exploit loads `/api/index`, selects private entries, requests each double-encoded path and prints `content` values matching `[A-Z0-9]{32}`.
+The exploit loads `/api/index`, selects private entries, requests each double-encoded path and prints all `content` values matching `[A-Z0-9]{32}`.
 
 ## Correct patch
 

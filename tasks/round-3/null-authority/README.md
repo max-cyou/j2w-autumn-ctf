@@ -6,7 +6,7 @@ Round 3 challenge written in Python with FastAPI. The service uses JWT bearer to
 
 - `service/` — vulnerable report service and JWT implementation;
 - `jury/checker.py` — verifies the normal signed-token report flow;
-- `jury/inject.py` — creates a user report containing a random flag;
+- `jury/inject.py` — creates ten user reports containing random flags;
 - `jury/exploit.py` — canonical exploit used by the jury.
 
 ## Run locally
@@ -18,7 +18,7 @@ python3 jury/inject.py http://127.0.0.1:8000
 python3 jury/exploit.py http://127.0.0.1:8000
 ```
 
-The injector and exploit should print the same flag.
+The injector and exploit should print the same ten flags.
 
 Stop the service:
 

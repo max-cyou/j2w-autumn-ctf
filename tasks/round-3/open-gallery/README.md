@@ -6,7 +6,7 @@ Round 3 beginner challenge written in Python with Flask. Public metadata belongs
 
 - `service/` — vulnerable gallery service;
 - `jury/checker.py` — verifies owner upload and download;
-- `jury/inject.py` — uploads a private file containing a random flag;
+- `jury/inject.py` — uploads ten private files containing random flags;
 - `jury/exploit.py` — canonical exploit used by the jury.
 
 ## Run locally
@@ -18,7 +18,7 @@ python3 jury/inject.py http://127.0.0.1:8000
 python3 jury/exploit.py http://127.0.0.1:8000
 ```
 
-The injector and exploit should print the same flag.
+The injector and exploit should print the same ten flags.
 
 Stop the service:
 

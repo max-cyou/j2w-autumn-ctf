@@ -6,7 +6,7 @@ Round 2 challenge written in Python with FastAPI. The service separates public d
 
 - `service/` — vulnerable document service;
 - `jury/checker.py` — verifies public document creation and preview;
-- `jury/inject.py` — stores a private document containing a random flag;
+- `jury/inject.py` — stores ten private documents containing random flags;
 - `jury/exploit.py` — canonical exploit used by the jury.
 
 ## Run locally
@@ -18,7 +18,7 @@ python3 jury/inject.py http://127.0.0.1:8000
 python3 jury/exploit.py http://127.0.0.1:8000
 ```
 
-The injector and exploit should print the same flag.
+The injector and exploit should print the same ten flags.
 
 Stop the service:
 

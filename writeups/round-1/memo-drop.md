@@ -18,7 +18,7 @@ A note is read with:
 GET /api/notes/<id>?key=<capability>
 ```
 
-The jury stores the flag through this normal creation endpoint.
+The jury stores ten flags through this normal creation endpoint.
 
 ## Vulnerable code
 
@@ -63,7 +63,7 @@ Repeat this for recent IDs and keep values matching `[A-Z0-9]{32}`.
 
 ## Canonical exploit
 
-The exploit requests `/api/recent`, reads every note with `key=`, and prints `text` values matching the flag format. The critical request is:
+The exploit requests `/api/recent`, reads every note with `key=`, and prints all `text` values matching the flag format. The critical request is:
 
 ```python
 urllib.request.urlopen(f"{target}/api/notes/{note['id']}?key=")

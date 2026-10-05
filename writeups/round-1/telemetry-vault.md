@@ -24,7 +24,7 @@ Messages are created with `POST /api/messages`. `GET /api/messages` intentionall
 GET /api/messages/read?id=<id>&owner=<full owner id>
 ```
 
-The jury selects an owner between `200000` and `299999` and stores the flag as message text.
+The jury selects ten owners between `200000` and `299999` and stores one flag as each message's text.
 
 ## Vulnerable code
 
@@ -75,7 +75,7 @@ The server truncates both sides, considers them equal and returns the protected 
 
 ## Canonical exploit
 
-[`jury/exploit.py`](../../tasks/round-1/telemetry-vault/jury/exploit.py) loads the message list, submits each `owner_hint` as `owner`, and prints recovered text matching the flag format. The attacker never needs to reconstruct the high bits because the vulnerable comparison discards them.
+[`jury/exploit.py`](../../tasks/round-1/telemetry-vault/jury/exploit.py) loads the message list, submits each `owner_hint` as `owner`, and prints all recovered text matching the flag format. The attacker never needs to reconstruct the high bits because the vulnerable comparison discards them.
 
 ## Correct patch
 

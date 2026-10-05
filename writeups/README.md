@@ -22,7 +22,7 @@ Do not publish this directory or the `jury/` files before the corresponding roun
 ## Source layout
 
 - `tasks/round-N/<name>/service/` — vulnerable service distributed to participants.
-- `tasks/round-N/<name>/jury/inject.py` — stores a random flag through the legitimate API.
+- `tasks/round-N/<name>/jury/inject.py` — stores ten random flags through the legitimate API.
 - `tasks/round-N/<name>/jury/checker.py` — verifies functionality that a defense must preserve.
 - `tasks/round-N/<name>/jury/exploit.py` — canonical organizer exploit.
 

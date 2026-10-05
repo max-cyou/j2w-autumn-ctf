@@ -16,7 +16,7 @@
 {"sub":"username","role":"user"}
 ```
 
-Users can create reports through `POST /api/reports` and list their own reports through `GET /api/reports`. `GET /api/audit` returns every report but requires the `auditor` role. The jury logs in as a random user and stores the flag in a report.
+Users can create reports through `POST /api/reports` and list their own reports through `GET /api/reports`. `GET /api/audit` returns every report but requires the `auditor` role. The jury logs in as a random user and stores ten flags in separate reports.
 
 ## Vulnerable code
 
