@@ -1,6 +1,10 @@
 # Example deployment
 
-This directory contains a small, generic Docker Compose deployment for reproducing the challenge services after the event. It is not the original competition infrastructure and does not include SelfAD, the runner, flag scheduling, scoring or participant repository provisioning.
+The root Compose files in this directory provide a small, generic deployment for reproducing the challenge services after the event. That stack is not the original competition infrastructure and does not include SelfAD, the runner, flag scheduling, scoring or participant repository provisioning.
+
+A sanitized copy of the actual SelfAD/nginx event topology is available in
+[`selfad/`](selfad/README.md). It preserves the real domains and operational
+settings without publishing passwords, tokens or other production secrets.
 
 The services are intentionally vulnerable. By default every port binds only to `127.0.0.1`; do not change `BIND_ADDRESS` to a public interface unless the host is protected by an appropriate isolated CTF environment.
 
